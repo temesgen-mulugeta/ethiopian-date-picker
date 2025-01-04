@@ -1,14 +1,30 @@
 "use client";
 
-import EthiopianCalendar from "@/components/custom-date-picker";
+import { EthiopianDateLib } from "@/utils/EthiopianDateLib";
+import { DateLibOptions, DayPicker } from "react-day-picker";
 
 export default function Home() {
+    const dateLib = getDateLib();
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <EthiopianCalendar />
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
+    <div className="p-20">
+      <DayPicker
+        components={{
+          Day(props) {
+            return <td {...props}>{props.children}</td>;
+          },
+          Week(props) {
+            return <tr {...props}>{props.children}</tr>;
+          },
+        }}
+        dateLib={dateLib}
+      />
     </div>
   );
 }
+
+
+export const getDateLib = (options?: DateLibOptions) => {
+  return new EthiopianDateLib({
+    ...options,
+  });
+};
