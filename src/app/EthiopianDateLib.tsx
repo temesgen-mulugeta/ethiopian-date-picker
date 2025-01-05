@@ -106,7 +106,6 @@ export class EthiopianDateLib extends DateLib {
     }
 
     const data = Math.floor(daysSinceStart / 7) + 1;
-    console.log("week", dateObj, data);
     return data;
   };
 
