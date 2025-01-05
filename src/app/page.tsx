@@ -1,27 +1,16 @@
 "use client";
 
 import { EthiopianDateLib } from "@/utils/EthiopianDateLib";
-import { DateLibOptions, DayPicker } from "react-day-picker";
+import { DateLibOptions } from "react-day-picker";
+import { Ethiopian } from "./Ethiopian";
 
 export default function Home() {
-    const dateLib = getDateLib();
   return (
     <div className="p-20">
-      <DayPicker
-        components={{
-          Day(props) {
-            return <td {...props}>{props.children}</td>;
-          },
-          Week(props) {
-            return <tr {...props}>{props.children}</tr>;
-          },
-        }}
-        dateLib={dateLib}
-      />
+      <Ethiopian />
     </div>
   );
 }
-
 
 export const getDateLib = (options?: DateLibOptions) => {
   return new EthiopianDateLib({

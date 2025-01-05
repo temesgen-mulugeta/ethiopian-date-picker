@@ -20,7 +20,7 @@ export const ethMonths = [
   "ጳጉሜ",
 ];
 
-export const shortDays = ["ሰ", "ማ", "ረ", "ሐ", "ዓ", "ቅ", "እ"];
+export const shortDays = ["እ", "ሰ", "ማ", "ረ", "ሐ", "ዓ", "ቅ"];
 
 export function isLeapYearEt(y: number): boolean {
   return y % 4 === 3;
@@ -62,10 +62,7 @@ function grigorianMonthLength(index: number, year: number): number {
 
 export function getEtDayName(day: Date): string {
   const dayOfWeek = day.getDay();
-  // Convert Sunday (0) to 7 to match Ethiopian calendar order
-  const ethiopianDayIndex = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
-  return day.getDay().toString();
-  return shortDays[ethiopianDayIndex];
+  return shortDays[dayOfWeek];
 }
 
 function grigorianDateFromDayNo(dayNum: number): Date {
@@ -199,13 +196,4 @@ export function addYears(etDate: EtDate, years: number): EtDate {
   }
 
   return { Day: etDate.Day, Month: etDate.Month, Year: newYear };
-}
-
-export function addDays(etDate: EtDate, days: number): EtDate {
-  if (!isValid(etDate))
-    throw new Error(
-      `Invalid ethiopian date ${etDate.Day}-${etDate.Month}-${etDate.Year}`
-    );
-
-  return createEthiopianDate(getDayNoEthiopian(etDate) + 1 + days);
 }
