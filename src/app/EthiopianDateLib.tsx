@@ -176,7 +176,6 @@ export class EthiopianDateLib extends DateLib {
       ...etDate,
       Day: 1,
     }) as ResultDate;
-    console.log("start", dateObj, etDate, start);
     return start;
   };
 

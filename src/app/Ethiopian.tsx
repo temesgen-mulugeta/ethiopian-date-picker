@@ -18,7 +18,6 @@ export function Ethiopian() {
           return <tr {...props}>{props.children}</tr>;
         },
         Month(props) {
-          console.log("props", props);
           return <div {...props}>{props.children}</div>;
         },
       }}
