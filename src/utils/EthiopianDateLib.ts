@@ -217,6 +217,18 @@ export class EthiopianDateLib extends DateLib {
     return etDate1.Year === etDate2.Year;
   };
 
+  // Override differenceInCalendarMonths to handle Ethiopian calendar
+  differenceInCalendarMonths = (
+    dateLeft: string | number | Date,
+    dateRight: string | number | Date
+  ): number => {
+    const date1 = this.ensureDate(dateLeft);
+    const date2 = this.ensureDate(dateRight);
+    const etDate1 = toEth(date1);
+    const etDate2 = toEth(date2);
+    return (etDate1.Year - etDate2.Year) * 13 + (etDate1.Month - etDate2.Month);
+  };
+
   // Override addDays to handle Ethiopian calendar
   addDays = <DateType extends Date, ResultDate extends Date = DateType>(
     date: DateArg<DateType>,

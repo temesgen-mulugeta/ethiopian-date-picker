@@ -9,6 +9,7 @@ export function Ethiopian() {
     <DayPicker
       mode="single"
       dateLib={new EthiopianDateLib()}
+      showWeekNumber
       components={{
         Weekday(props) {
           return <td {...props}>{props.children}</td>;
@@ -17,6 +18,7 @@ export function Ethiopian() {
           return <tr {...props}>{props.children}</tr>;
         },
         Month(props) {
+          console.log("props", props);
           return <div {...props}>{props.children}</div>;
         },
       }}
