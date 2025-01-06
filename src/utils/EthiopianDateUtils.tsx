@@ -172,6 +172,12 @@ export function getEtMonthName(m: number): string {
   return "";
 }
 
+export function ethiopianDayDiff(date1: EthiopianDate, date2: EthiopianDate): number {
+  const day1 = getDayNoEthiopian(date1);
+  const day2 = getDayNoEthiopian(date2);
+  return day1 - day2;
+}
+
 function isValid(date: EthiopianDate): boolean {
   if (date.Year < 1000 || date.Year > 3000) return false;
   if (date.Month < 1) return false;
@@ -199,10 +205,13 @@ export function addYears(etDate: EthiopianDate, years: number): EthiopianDate {
 }
 
 export function formatEthiopianDate(
-  etDate: EthiopianDate,
   dateObj: Date | undefined,
   formatStr: string
 ): string {
+  const etDate = dateObj ? toEth(dateObj) : undefined;
+
+  if (!etDate) return "";
+
   switch (formatStr) {
     case "LLLL yyyy":
     case "LLLL y":
@@ -222,7 +231,8 @@ export function formatEthiopianDate(
 
     case "d":
       return etDate.Day.toString();
-
+    case "PPP":
+      return ` ${getEtMonthName(etDate.Month)} ${etDate.Day}, ${etDate.Year}`;
     case "PPPP":
       if (!dateObj) return "";
       return `${getEtDayName(dateObj)}, ${getEtMonthName(etDate.Month)} ${

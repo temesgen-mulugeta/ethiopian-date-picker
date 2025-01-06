@@ -26,14 +26,13 @@ export class EthiopianDateLib extends DateLib {
     options?: FormatOptions
   ): string => {
     const dateObj = this.ensureDate(date);
-    const etDate = toEth(dateObj);
 
     // Handle time formats using original date-fns format
     if (formatStr.includes("hh:mm") || formatStr.includes("a")) {
       return format(dateObj, formatStr, { ...this.options, ...options });
     }
 
-    return formatEthiopianDate(etDate, dateObj, formatStr);
+    return formatEthiopianDate(dateObj, formatStr);
   };
 
   // Override getMonth to return Ethiopian month (1-13)

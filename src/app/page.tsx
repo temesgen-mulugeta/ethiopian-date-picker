@@ -1,12 +1,16 @@
 "use client";
 
-import { Ethiopian } from "@/utils/Ethiopian";
-
+import DatePicker from "@/components/date-picker";
+import DateRangePicker from "@/components/date-range-picker";
 
 export default function Home() {
   return (
     <div className="p-20">
-      <Ethiopian />
+      {/* <Ethiopian /> */}
+      <DatePicker />
+      {/*
+      <DateRangePicker /> */}
+      <DateRangePicker />
     </div>
   );
 }
