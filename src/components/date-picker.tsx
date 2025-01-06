@@ -76,7 +76,7 @@ export default function DatePicker({
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0" align="start">
-        <div className="flex gap-2">
+        <div className="flex flex-col md:flex-row gap-2">
           <Calendar
             {...props}
             mode="single"
