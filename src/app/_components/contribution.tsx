@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Contribution() {
   return (
-    <div className="mt-16 mb-8">
-      <h2 className="text-2xl font-bold tracking-tight mb-6">Contribute</h2>
+    <div className="mt-14 mb-8">
+      <h2 className="text-xl font-bold tracking-tight mb-6">Contribute</h2>
       <div className="bg-muted rounded-lg p-8 text-center">
         <Github className="w-12 h-12 mx-auto mb-4" />
         <h3 className="text-xl font-semibold mb-3">Open Source Project</h3>

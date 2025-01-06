@@ -1,6 +1,6 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 
 interface TimelineEntry {
   title: string;
@@ -10,18 +10,20 @@ interface TimelineEntry {
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState(0);
+//   const [height, setHeight] = useState(0);
 
-  useEffect(() => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
-    }
-  }, [ref]);
+//   useEffect(() => {
+//     if (ref.current) {
+//       const rect = ref.current.getBoundingClientRect();
+//       setHeight(rect.height);
+//     }
+//   }, [ref]);
+
+  const height = 2200;
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 10%", "end 50%"],
+    offset: ["start 30%", "end 70%"],
   });
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
@@ -40,9 +42,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 <div className="size-2 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 " />
               </div>
 
-              <h3 className=" font-bold">
-                {item.title}
-              </h3>
+              <h3 className=" font-bold">{item.title}</h3>
               <div className="">{item.content}</div>
             </div>
           </div>
