@@ -3,6 +3,7 @@
 import DatePicker from "@/components/date-picker";
 import Description from "./_components/description";
 import Steps from "./_components/steps";
+import Contribution from "./_components/contribution";
 
 export default function Home() {
   return (
@@ -13,8 +14,7 @@ export default function Home() {
         </div>
         <Description />
         <Steps />
-        <Description />
-        <Description />
+        <Contribution />
       </div>
     </div>
   );

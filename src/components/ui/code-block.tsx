@@ -1,8 +1,8 @@
 "use client";
+import { IconCheck, IconCopy } from "@tabler/icons-react";
 import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import { IconCheck, IconCopy } from "@tabler/icons-react";
 
 type CodeBlockProps = {
   language: string;
@@ -54,7 +54,7 @@ export const CodeBlock = ({
     : highlightLines;
 
   return (
-    <div className="relative w-full rounded-lg bg-slate-900 p-4 font-mono text-sm">
+    <div className="relative w-full max-w-screen rounded-lg bg-slate-900 p-4 font-mono text-sm">
       <div className="flex flex-col gap-2">
         {tabsExist && (
           <div className="flex  overflow-x-auto">
@@ -96,7 +96,7 @@ export const CodeBlock = ({
         }}
         wrapLines={true}
         showLineNumbers={true}
-        lineProps={(lineNumber) => ({
+        lineProps={(lineNumber: number) => ({
           style: {
             backgroundColor: activeHighlightLines.includes(lineNumber)
               ? "rgba(255,255,255,0.1)"
