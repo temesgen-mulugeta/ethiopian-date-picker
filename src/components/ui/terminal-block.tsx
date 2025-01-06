@@ -18,7 +18,7 @@ export const TerminalBlock = ({ code, prompt = "$" }: TerminalBlockProps) => {
   };
 
   return (
-    <div className="relative w-full rounded-lg bg-slate-900 p-4 font-mono text-sm">
+    <div className="relative max-w-[75vw] w-full rounded-lg bg-slate-900 p-4 font-mono text-sm">
       <div className="flex justify-end mb-2">
         <button
           onClick={copyToClipboard}

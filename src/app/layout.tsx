@@ -6,6 +6,7 @@ import { Work_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Providers } from "@/lib/providers";
+import { cn } from "@/lib/utils";
 
 const sora = Work_Sans({ subsets: ["latin"], display: "swap" });
 
@@ -29,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={sora.className}>
+      <body className={cn(sora.className, "bg-background antialiased")}>
         <Providers>
           <ThemeProvider
             attribute="class"
@@ -37,7 +38,8 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div className="relative flex min-h-screen flex-col">
+            <div className="relative flex  flex-col">
+              
               <Header />
               <main className="flex-1">{children}</main>
               <Footer />

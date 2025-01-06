@@ -4,12 +4,12 @@ import Link from "next/link";
 
 export default function Contribution() {
   return (
-    <div className="mt-14 mb-8">
+    <div className="mt-14 mb-8 px-3">
       <h2 className="text-xl font-bold tracking-tight mb-6">Contribute</h2>
       <div className="bg-muted rounded-lg p-8 text-center">
         <Github className="w-12 h-12 mx-auto mb-4" />
         <h3 className="text-xl font-semibold mb-3">Open Source Project</h3>
-        <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+        <p className="text-muted-foreground mb-6 max-w-xl md:max-w-2xl mx-auto">
           This project is open source and welcomes contributions from the
           community. Whether you want to fix a bug, add a feature, or improve
           documentation, your help is appreciated.
