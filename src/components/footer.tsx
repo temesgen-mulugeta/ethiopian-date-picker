@@ -1,3 +1,5 @@
+import { MYGITHUBURL } from "@/utils/constants";
+import { LINKEDINURL } from "@/utils/constants";
 import { Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 
@@ -20,7 +22,7 @@ export function Footer() {
         </div>
         <div className="flex items-center gap-4">
           <Link
-            href="https://www.linkedin.com/in/temesgen-hailegiorgis/"
+            href={LINKEDINURL}
             target="_blank"
             rel="noreferrer"
             className="hover:text-primary"
@@ -29,7 +31,7 @@ export function Footer() {
             <span className="sr-only">LinkedIn</span>
           </Link>
           <Link
-            href="https://github.com/temesgen-mulugeta"
+            href={MYGITHUBURL}
             target="_blank"
             rel="noreferrer"
             className="hover:text-primary"

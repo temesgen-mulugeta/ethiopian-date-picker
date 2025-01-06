@@ -4,6 +4,7 @@ import { IconBrandGithub } from "@tabler/icons-react";
 import Link from "next/link";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
+import { GITHUBURL } from "@/utils/constants";
 
 export function Header() {
   return (
@@ -20,7 +21,7 @@ export function Header() {
           <nav className="flex items-center space-x-2">
             <Button variant="ghost" size="icon" asChild>
               <a
-                href="https://github.com/temesghen/shadcn-ethiopian-datepicker"
+                href={GITHUBURL}
                 target="_blank"
                 rel="noreferrer"
               >
