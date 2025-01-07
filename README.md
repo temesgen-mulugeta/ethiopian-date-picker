@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shadcn Ethiopian Date Picker
 
-## Getting Started
+An Ethiopian calendar implementation for React applications, built on top of `react-day-picker` and styled with `shadcn/ui`. This package provides an integration of Ethiopian calendar functionality into your React applications.
 
-First, run the development server:
+[![Demo](https://img.shields.io/badge/Demo-Visit%20Site-blue)](https://shadcn-ethiopian-date-picker.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Screenshots
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Ethiopian Date Picker Components](./public/readme.png)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Overview
 
-## Learn More
+The Ethiopian Date Picker offers a custom DateLib implementation that enables full Ethiopian calendar functionality while maintaining Gregorian calendar compatibility under the hood. It's designed to be flexible and customizable, allowing you to either use the pre-built components or create your own styled implementations.
 
-To learn more about Next.js, take a look at the following resources:
+### Key Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 🗓️ Dual calendar system - displays Ethiopian dates while storing Gregorian format internally
+- 🔄 Comprehensive date conversion utilities
+- 🎨 Fully customizable components
+- 📅 Support for both single date and date range selection
+- 🌐 Dual calendar view showing both Ethiopian and Gregorian dates
+- ⚡ Support for all the features of `react-day-picker`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Documentation
 
-## Deploy on Vercel
+For detailed implementation steps, examples, and live demos, visit our [documentation site](https://shadcn-ethiopian-date-picker.vercel.app/).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The documentation includes:
+- Step-by-step installation guide
+- Component setup instructions
+- Usage examples
+- API reference
+- Customization options
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing
+
+Contributions are welcome! Feel free to submit issues and enhancement requests.
+
+## License
+
+MIT
+
+## Author
+
+Temesgen Hailegiorgis
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/temesgen-hailegiorgis/)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/temesgen-hailegiorgis)
