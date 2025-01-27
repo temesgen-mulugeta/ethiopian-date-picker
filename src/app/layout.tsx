@@ -1,5 +1,6 @@
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { Analytics } from "@vercel/analytics/next";
 
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
@@ -39,13 +40,13 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <div className="relative flex  flex-col">
-              
               <Header />
               <main className="flex-1">{children}</main>
               <Footer />
             </div>
           </ThemeProvider>
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
