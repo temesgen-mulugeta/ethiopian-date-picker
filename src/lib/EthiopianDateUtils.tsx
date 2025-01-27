@@ -142,7 +142,6 @@ function addGregorianMonths(m: number, y: number): number {
 
 function getDayNoGrigorian(date: Date): number {
   if (!(date instanceof Date)) {
-    console.error("Invalid date object:", date);
     return 0;
   }
 
