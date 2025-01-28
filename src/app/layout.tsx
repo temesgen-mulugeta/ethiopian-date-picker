@@ -1,7 +1,7 @@
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Analytics } from "@vercel/analytics/next";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 import "./globals.css";
@@ -47,6 +47,7 @@ export default function RootLayout({
           </ThemeProvider>
         </Providers>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
